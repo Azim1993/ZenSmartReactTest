@@ -1,4 +1,5 @@
-import {Component, useState} from 'react';
+import {Component} from 'react';
+import Todo from './Todo'
 
 class TodoList extends Component {
     constructor(props) {
@@ -15,6 +16,17 @@ class TodoList extends Component {
             ]
         }
     }
+
+    handleTodoClick = (propsTodo) => {
+        const updatedTodolist = this.state.todolist.map(todo => {
+            if (todo.id === propsTodo.id) {
+                todo.isDone = true;
+            }
+            return todo;
+        })
+        this.setState({ ...this.state, todolist: updatedTodolist})
+    }
+
     render () {
         return (
             <div className="panel">
@@ -22,7 +34,10 @@ class TodoList extends Component {
                 <hr />
                 {
                     this.state.todolist.map(todo => (
-                        <p>{todo.content}</p>
+                        <Todo key={todo.id}
+                            onClickHandler={this.handleTodoClick}
+                            todo={todo}
+                        ></Todo>
                     ))
                 }
             </div>

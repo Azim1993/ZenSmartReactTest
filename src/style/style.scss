@@ -8,4 +8,11 @@
     box-shadow: 0 0 3px $primaryDeep;
     border-radius: 5px;
 }
+.list-view {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $unselectedNav;
+    padding: 10px 0px;
+    margin: 0;
+}
 

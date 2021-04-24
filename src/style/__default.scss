@@ -29,4 +29,14 @@ h1,h2,h3,h4,p {
 .border-primay {
     border: 1px solid $primary;
 }
+.text-success {
+    color: $successDeep;
+}
+.text-warning {
+    color: $warningDeep;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
 
